@@ -1917,6 +1917,36 @@ TrackerCSA14Scenario = cms.PSet(
     TPBBarrels = cms.PSet(distribution = cms.string('gaussian'), scale = cms.double(1.0), scaleError = cms.double(1.0),
 	TPBHalfBarrels = cms.PSet( distribution = cms.string('flat'), dX = cms.double(0.0005), dY = cms.double(0.0010), dZ = cms.double(0.0050), phiX = cms.double(30e-6), phiY = cms.double(30e-06), phiZ = cms.double(30e-06),),
         DetUnits =     cms.PSet( dXlocal = cms.double(0.0001), dYlocal = cms.double(0.0001), dZlocal = cms.double(0.0001), phiXlocal = cms.double(0.5e-04), phiYlocal = cms.double(0.5e-04), phiZlocal = cms.double(0.5e-04),),
+		TPBHalfBarrel1 = cms.PSet(
+			TPBLayer3 = cms.PSet( 
+				TPBLadder1 = cms.PSet(
+					DetUnit1 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+					DetUnit2 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+					DetUnit3 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+					DetUnit4 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+					DetUnit5 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+					DetUnit6 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+					DetUnit7 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+					DetUnit8 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+				),
+				TPBLadder3 = cms.PSet(
+					DetUnit1 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+					DetUnit2 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+					DetUnit3 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+					DetUnit4 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+				),
+				TPBLadder9 = cms.PSet(
+					DetUnit6 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+					DetUnit7 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+					DetUnit8 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+				),
+				TPBLadder21 = cms.PSet(
+					DetUnit1 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+					DetUnit2 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+					DetUnit3 = cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ),
+				)
+			)
+		)
     ),
     TPEEndcaps = cms.PSet( distribution = cms.string('gaussian'), scale = cms.double(1.0), scaleError = cms.double(1.0),
         TPEPanels =    cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(1e-06), phiYlocal = cms.double(1e-06), phiZlocal = cms.double(1e-06),),
