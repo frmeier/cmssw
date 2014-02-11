@@ -22,7 +22,8 @@ process.load("Geometry.TrackerNumberingBuilder.trackerNumberingGeometry_cfi")
 process.load("Alignment.TrackerAlignment.MisalignedTracker_cfi")
 process.MisalignedTracker.saveToDbase = True # to store to DB
 import Alignment.TrackerAlignment.Scenarios_cff as _Scenarios
-process.MisalignedTracker.scenario = _Scenarios.Tracker10pbScenario
+process.MisalignedTracker.scenario = _Scenarios.TrackerCSA14Scenario
+#process.MisalignedTracker.scenario = _Scenarios.Tracker10pbScenario
 #process.MisalignedTracker.scenario = _Scenarios.SurveyLASOnlyScenario
 #process.MisalignedTracker.scenario = _Scenarios.SurveyLASCosmicsScenario
 #process.MisalignedTracker.scenario = _Scenarios.TrackerCRAFTScenario
@@ -38,6 +39,10 @@ process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(1)
 )
 
+# Global Tag
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+process.GlobalTag.globaltag = 'START53_V27::All' # take your favourite
+
 # Database output service
 import CondCore.DBCommon.CondDBSetup_cfi
 process.PoolDBOutputService = cms.Service("PoolDBOutputService",
@@ -49,11 +54,11 @@ process.PoolDBOutputService = cms.Service("PoolDBOutputService",
     connect = cms.string('sqlite_file:Alignments.db'),
     toPut = cms.VPSet(cms.PSet(
         record = cms.string('TrackerAlignmentRcd'),
-        tag = cms.string('Tracker10pbScenario210_mc')
+        tag = cms.string('TrackerCSA14Scenario')
     ), 
         cms.PSet(
             record = cms.string('TrackerAlignmentErrorRcd'),
-            tag = cms.string('Tracker10pbScenarioErrors210_mc')
+            tag = cms.string('TrackerCSA14ScenarioErrors')
         ))
 )
 process.PoolDBOutputService.DBParameters.messageLevel = 2
