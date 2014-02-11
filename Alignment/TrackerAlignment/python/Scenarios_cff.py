@@ -1906,3 +1906,34 @@ TrackerCRAFTScenario = copy.deepcopy(Tracker10pbScenario)
 TrackerCRAFTScenario.TIBHalfBarrels = copy.deepcopy(Tracker100pbScenario.TIBHalfBarrels)
 TrackerCRAFTScenario.TOBHalfBarrels = copy.deepcopy(Tracker100pbScenario.TOBHalfBarrels)
 TrackerCRAFTScenario.TPEEndcaps = copy.deepcopy(TrackerSurveyLASOnlyScenario.TPEEndcaps)
+
+
+
+# -----------------------------------------------------------------------
+# CSA14 scenario
+# See https://twiki.cern.ch/twiki/bin/viewauth/CMS/TkAl1402 for a justification of these values. This scenario has to be applied on top of an existing MC object, not on top of IDEAL.
+TrackerCSA14Scenario = cms.PSet(
+    MisalignmentScenarioSettings,
+    TPBBarrels = cms.PSet(distribution = cms.string('gaussian'), scale = cms.double(1.0), scaleError = cms.double(1.0),
+	TPBHalfBarrels = cms.PSet( distribution = cms.string('flat'), dX = cms.double(0.0005), dY = cms.double(0.0010), dZ = cms.double(0.0050), phiX = cms.double(30e-6), phiY = cms.double(30e-06), phiZ = cms.double(30e-06),),
+        DetUnits =     cms.PSet( dXlocal = cms.double(0.0001), dYlocal = cms.double(0.0001), dZlocal = cms.double(0.0001), phiXlocal = cms.double(0.5e-04), phiYlocal = cms.double(0.5e-04), phiZlocal = cms.double(0.5e-04),),
+    ),
+    TPEEndcaps = cms.PSet( distribution = cms.string('gaussian'), scale = cms.double(1.0), scaleError = cms.double(1.0),
+        TPEPanels =    cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(1e-06), phiYlocal = cms.double(1e-06), phiZlocal = cms.double(1e-06),),
+        TPEHalfDisks = cms.PSet( dXlocal = cms.double(0.0100), dYlocal = cms.double(0.0100), dZlocal = cms.double(0.0100), phiXlocal = cms.double(1e-06), phiYlocal = cms.double(1e-06), phiZlocal = cms.double(1e-06),),
+        DetUnits =     cms.PSet( dXlocal = cms.double(0.0001), dYlocal = cms.double(0.0001), dZlocal = cms.double(0.0001), phiXlocal = cms.double(0.5e-04), phiYlocal = cms.double(0.5e-04), phiZlocal = cms.double(0.5e-04),),
+    ),
+    TIBHalfBarrels = cms.PSet(distribution = cms.string('gaussian'), scale = cms.double(1.0), scaleError = cms.double(1.0),
+        DetUnits =     cms.PSet( dXlocal = cms.double(0.0002), dYlocal = cms.double(0.0002), dZlocal = cms.double(0.0002), phiXlocal = cms.double(0.5e-04), phiYlocal = cms.double(0.5e-04), phiZlocal = cms.double(0.5e-04),),
+    ),
+    TOBHalfBarrels = cms.PSet(distribution = cms.string('gaussian'), scale = cms.double(1.0), scaleError = cms.double(1.0),
+        DetUnits =     cms.PSet( dXlocal = cms.double(0.0005), dYlocal = cms.double(0.0005), dZlocal = cms.double(0.0005), phiXlocal = cms.double(0.5e-04), phiYlocal = cms.double(0.5e-04), phiZlocal = cms.double(0.5e-04),),
+    ),
+    TIDEndcaps = cms.PSet(distribution = cms.string('gaussian'), scale = cms.double(1.0), scaleError = cms.double(1.0),
+        DetUnits =     cms.PSet( dXlocal = cms.double(0.0002), dYlocal = cms.double(0.0002), dZlocal = cms.double(0.0002), phiXlocal = cms.double(0.5e-04), phiYlocal = cms.double(0.5e-04), phiZlocal = cms.double(0.5e-04),),
+    ),
+    TECEndcaps = cms.PSet(distribution = cms.string('gaussian'), scale = cms.double(1.0), scaleError = cms.double(1.0),
+        DetUnits =     cms.PSet( dXlocal = cms.double(0.0002), dYlocal = cms.double(0.0002), dZlocal = cms.double(0.0002), phiXlocal = cms.double(0.5e-04), phiYlocal = cms.double(0.5e-04), phiZlocal = cms.double(0.5e-04),),
+    ),
+)
+
