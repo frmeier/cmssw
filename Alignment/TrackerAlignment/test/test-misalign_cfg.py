@@ -12,6 +12,19 @@ process.MessageLogger.cout = cms.untracked.PSet(
 )
 #replace MessageLogger.debugModules = { "*" }
 
+# Global Tag
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+process.GlobalTag.globaltag = 'START53_V27::All' # take your favourite
+
+# This uses the object from the tag and applies the misalignment scenario on top of that object
+process.load("Alignment.CommonAlignmentProducer.AlignmentProducer_cff")
+process.AlignmentProducer.doMisalignmentScenario=True
+process.AlignmentProducer.applyDbAlignment=True
+from Alignment.TrackerAlignment.Scenarios_cff import *
+process.AlignmentProducer.MisalignmentScenario = TrackerCSA14Scenario
+process.AlignmentProducer.saveToDB=True
+process.AlignmentProducer.saveApeToDB=True
+
 # service = Tracer {}
 # Ideal geometry producer
 process.load("Geometry.CMSCommonData.cmsIdealGeometryXML_cfi")
@@ -19,10 +32,11 @@ process.load("Geometry.CMSCommonData.cmsIdealGeometryXML_cfi")
 process.load("Geometry.TrackerNumberingBuilder.trackerNumberingGeometry_cfi")
 
 # Misalignment example scenario producer
-process.load("Alignment.TrackerAlignment.MisalignedTracker_cfi")
-process.MisalignedTracker.saveToDbase = True # to store to DB
-import Alignment.TrackerAlignment.Scenarios_cff as _Scenarios
-process.MisalignedTracker.scenario = _Scenarios.TrackerCSA14Scenario
+# This works only if you like to produce something w.r.t. ideal
+#process.load("Alignment.TrackerAlignment.MisalignedTracker_cfi")
+#process.MisalignedTracker.saveToDbase = True # to store to DB
+#import Alignment.TrackerAlignment.Scenarios_cff as _Scenarios
+#process.MisalignedTracker.scenario = _Scenarios.TrackerCSA14Scenario
 #process.MisalignedTracker.scenario = _Scenarios.Tracker10pbScenario
 #process.MisalignedTracker.scenario = _Scenarios.SurveyLASOnlyScenario
 #process.MisalignedTracker.scenario = _Scenarios.SurveyLASCosmicsScenario
@@ -38,10 +52,6 @@ process.source = cms.Source("EmptySource")
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(1)
 )
-
-# Global Tag
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
-process.GlobalTag.globaltag = 'START53_V27::All' # take your favourite
 
 # Database output service
 import CondCore.DBCommon.CondDBSetup_cfi
