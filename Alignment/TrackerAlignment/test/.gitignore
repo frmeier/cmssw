@@ -1,0 +1,7 @@
+*.db
+*.dump
+*.root
+*.out
+*.swp
+*.diff
+*.txt
