@@ -1948,10 +1948,17 @@ TrackerCSA14Scenario = cms.PSet(
 			)
 		)
     ),
-    TPEEndcaps = cms.PSet( distribution = cms.string('gaussian'), scale = cms.double(1.0), scaleError = cms.double(1.0),
-        TPEPanels =    cms.PSet( dXlocal = cms.double(0.0050), dYlocal = cms.double(0.0050), dZlocal = cms.double(0.0050), phiXlocal = cms.double(1e-06), phiYlocal = cms.double(1e-06), phiZlocal = cms.double(1e-06),),
-        TPEHalfDisks = cms.PSet( dXlocal = cms.double(0.0100), dYlocal = cms.double(0.0100), dZlocal = cms.double(0.0100), phiXlocal = cms.double(1e-06), phiYlocal = cms.double(1e-06), phiZlocal = cms.double(1e-06),),
-        DetUnits =     cms.PSet( dXlocal = cms.double(0.0001), dYlocal = cms.double(0.0001), dZlocal = cms.double(0.0001), phiXlocal = cms.double(0.5e-04), phiYlocal = cms.double(0.5e-04), phiZlocal = cms.double(0.5e-04),),
+	TPEEndcap1 = cms.PSet(distribution = cms.string('gaussian'), scale = cms.double(1.0), scaleError = cms.double(1.0),
+			dX = cms.double(0.01), dY = cms.double(0.01), dZ = cms.double(0.01), phiX = cms.double(10e-06), phiY = cms.double(10e-06), phiZ = cms.double(10e-06)),
+	TPEEndcap2 = cms.PSet(distribution = cms.string('gaussian'), scale = cms.double(1.0), scaleError = cms.double(1.0),
+		TPEPanels = cms.PSet ( dXlocal = cms.double(0.01), dYlocal = cms.double(0.01), dZlocal = cms.double(0.01), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06)),
+		TPEHalfCylinder1 = cms.PSet( TPEHalfDisk1 = cms.PSet(
+			TPEBlade1 = cms.PSet( TPEPanel1 = cms.PSet( DetUnits = cms.PSet( dXlocal = cms.double(0.01), dYlocal = cms.double(0.01), dZlocal = cms.double(0.01), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ))),
+			TPEBlade8 = cms.PSet( TPEPanel2 = cms.PSet( DetUnits = cms.PSet( dXlocal = cms.double(0.01), dYlocal = cms.double(0.01), dZlocal = cms.double(0.01), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ))),
+			)),
+		TPEHalfCylinder2 = cms.PSet( TPEHalfDisk1 = cms.PSet(
+			TPEBlade9 = cms.PSet( TPEPanel2 = cms.PSet( DetUnits = cms.PSet( dXlocal = cms.double(0.01), dYlocal = cms.double(0.01), dZlocal = cms.double(0.01), phiXlocal = cms.double(10e-06), phiYlocal = cms.double(10e-06), phiZlocal = cms.double(10e-06) ))),
+			)),
     ),
     TIBHalfBarrels = cms.PSet(distribution = cms.string('gaussian'), scale = cms.double(1.0), scaleError = cms.double(1.0),
         DetUnits =     cms.PSet( dXlocal = cms.double(0.0002), dYlocal = cms.double(0.0002), dZlocal = cms.double(0.0002), phiXlocal = cms.double(0.5e-04), phiYlocal = cms.double(0.5e-04), phiZlocal = cms.double(0.5e-04),),
